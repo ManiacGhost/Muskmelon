@@ -1,0 +1,15 @@
+# Full-size originals stay on this computer only.
+# GitHub rejects files over 100 MB, and Cloudflare Pages rejects files over 25 MiB.
+videos/surprise-original.mp4
+photos/*.jpg
+photos/*.jpeg
+photos/*.png
+photos/*.webp
+# (the web-sized copies in photos/web/ ARE committed)
+
+# build output — Cloudflare runs build.py itself
+dist/
+
+# local tooling
+.claude/
+__pycache__/

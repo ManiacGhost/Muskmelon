@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday 💖</title>
+  <meta name="description" content="A little surprise, made with love 🎁" />
+  <!-- link preview when the URL is shared on WhatsApp / Instagram -->
+  <meta property="og:title" content="For Muski 💖" />
+  <meta property="og:description" content="A little surprise, made with love 🎁 Open me!" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#ffe5ec" />
+  <!-- keep this personal page out of search engines -->
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💖</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=4" />
+</head>
+<body>
+  <div id="hearts" aria-hidden="true"></div>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <!-- Intro gift screen -->
+  <section id="intro" class="intro">
+    <p class="intro-hint">Someone special has a surprise for you…</p>
+    <button id="gift" class="gift" aria-label="Open your gift">
+      <span class="gift-lid"></span>
+      <span class="gift-box"></span>
+      <span class="gift-bow">🎀</span>
+    </button>
+    <p class="intro-tap">tap the gift 🎁</p>
+  </section>
+
+  <main id="main" class="hidden">
+    <!-- Hero -->
+    <section class="hero">
+      <p class="eyebrow">today is all about you</p>
+      <h1>Happy Birthday,<br /><span class="her-name"></span></h1>
+      <p class="sub">To the girl who makes my world brighter ✨</p>
+      <div class="counter">
+        <div><strong id="days">0</strong><span>days together</span></div>
+        <div><strong id="hours">0</strong><span>hours of loving you</span></div>
+        <div><strong id="seconds">0</strong><span>seconds of being yours</span></div>
+      </div>
+      <a href="#distance" class="scroll-down">scroll down ↓</a>
+    </section>
+
+    <!-- Miles apart -->
+    <section id="distance" class="section">
+      <h2>To the most beautifully irritating, yet <span class="nowrap">I-can't-live-without-you</span> person 💖</h2>
+      <p class="section-sub">A little memory from your last birthday</p>
+      <div class="map reveal">
+        <div class="pin pin-you"><span class="dot"></span><b id="city-you"></b></div>
+        <svg class="route" viewBox="0 0 600 160" preserveAspectRatio="none" aria-hidden="true">
+          <path id="route-path" d="M40,120 C180,-20 420,-20 560,120" />
+        </svg>
+        <div class="plane" id="plane">💗</div>
+        <div class="arrived" id="arrived">aa gaya tumhare paas 🥰</div>
+        <div class="pin pin-her"><span class="dot"></span><b id="city-her"></b></div>
+      </div>
+      <div class="distance-msg" id="distance-msg"></div>
+    </section>
+
+    <!-- Cake -->
+    <section id="cake" class="section">
+      <h2>Blow out the candles 🕯️</h2>
+      <p class="section-sub">Tap all 3 candles to blow them out</p>
+      <div class="cake-wrap">
+        <div class="candles" id="candles">
+          <div class="candle"><span class="flame"></span></div>
+          <div class="candle"><span class="flame"></span></div>
+          <div class="candle"><span class="flame"></span></div>
+        </div>
+        <div class="cake">
+          <div class="tier top"><span class="drip"></span></div>
+          <div class="tier bottom"><span class="drip"></span></div>
+          <div class="plate"></div>
+        </div>
+      </div>
+      <p id="wish-msg" class="wish-msg">A small surprise you have seen before… 👀</p>
+      <div id="surprise" class="surprise"></div>
+    </section>
+
+    <!-- Letter -->
+    <section id="letter" class="section">
+      <h2>A little letter for you 💌</h2>
+      <p class="section-sub">Tap the envelope</p>
+      <div class="envelope" id="envelope">
+        <div class="env-back"></div>
+        <div class="paper">
+          <p class="dear">Dear <span class="nick-name"></span>,</p>
+          <div id="letter-body"></div>
+          <p class="sign">Forever yours,<br /><span id="your-name"></span> ❤️</p>
+        </div>
+        <div class="env-front"></div>
+        <div class="env-flap"></div>
+        <div class="seal">💗</div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="section">
+      <h2>Our moments 📸</h2>
+      <p class="section-sub">A few of my favourite memories with you</p>
+      <div class="polaroids" id="polaroids"></div>
+    </section>
+
+    <!-- Open when -->
+    <section id="open-when" class="section">
+      <h2>Open when… 💌</h2>
+      <p class="section-sub">For all the days I can't be there with you</p>
+      <div class="ow-grid" id="ow-grid"></div>
+    </section>
+
+    <!-- Hug -->
+    <section id="hug" class="section">
+      <h2>A tight hug for you 🤗</h2>
+      <p class="section-sub">Press and hold the heart until it's full</p>
+      <button class="hug-heart" id="hug-heart" aria-label="Hold to receive a hug">
+        <svg viewBox="0 0 32 29" aria-hidden="true">
+          <defs>
+            <clipPath id="heart-clip"><path d="M16 28.5S0 18.7 0 8.6A8.3 8.3 0 0 1 16 5a8.3 8.3 0 0 1 16 3.6C32 18.7 16 28.5 16 28.5z" /></clipPath>
+          </defs>
+          <path class="heart-outline" d="M16 28.5S0 18.7 0 8.6A8.3 8.3 0 0 1 16 5a8.3 8.3 0 0 1 16 3.6C32 18.7 16 28.5 16 28.5z" />
+          <rect id="hug-fill" x="0" y="29" width="32" height="29" clip-path="url(#heart-clip)" />
+        </svg>
+      </button>
+      <!-- cartoon Nikku & Muski — appears when the heart is full -->
+      <div class="hug-scene" id="hug-scene" aria-label="Cartoon of Nikku and Muski hugging">
+        <svg viewBox="0 0 300 240" aria-hidden="true">
+          <ellipse cx="150" cy="226" rx="110" ry="8" fill="#f9c6d4" opacity=".6" />
+
+          <!-- Muski (left) -->
+          <g transform="translate(108,0)"><g class="kid kid-her">
+            <rect x="-40" y="44" width="80" height="112" rx="32" fill="#2a1a14" />
+            <rect x="-17" y="196" width="14" height="24" rx="6" fill="#3b3f58" />
+            <rect x="3" y="196" width="14" height="24" rx="6" fill="#3b3f58" />
+            <ellipse cx="-10" cy="221" rx="10" ry="5" fill="#fff" />
+            <ellipse cx="10" cy="221" rx="10" ry="5" fill="#fff" />
+            <rect x="-30" y="126" width="60" height="76" rx="22" fill="#ffd93b" />
+            <rect x="-14" y="170" width="28" height="4" rx="2" fill="#fff" opacity=".7" />
+            <g class="arm-idle">
+              <rect x="-40" y="132" width="13" height="46" rx="6.5" fill="#f2c4a3" />
+              <rect x="-41" y="130" width="15" height="16" rx="7" fill="#ffd93b" />
+              <rect x="27" y="132" width="13" height="46" rx="6.5" fill="#f2c4a3" />
+              <rect x="26" y="130" width="15" height="16" rx="7" fill="#ffd93b" />
+            </g>
+            <g class="head">
+              <circle cx="0" cy="80" r="36" fill="#f2c4a3" />
+              <path d="M-38,86 C-42,38 -8,34 6,42 C22,38 42,52 38,88 C32,64 18,54 2,52 C-10,60 -26,64 -38,86Z" fill="#2a1a14" />
+              <rect x="-41" y="66" width="11" height="84" rx="5.5" fill="#2a1a14" />
+              <rect x="30" y="70" width="11" height="80" rx="5.5" fill="#2a1a14" />
+              <g class="eyes-open"><circle cx="-12" cy="86" r="3.6" fill="#2a1a14" /><circle cx="12" cy="86" r="3.6" fill="#2a1a14" /></g>
+              <g class="eyes-closed" fill="none" stroke="#2a1a14" stroke-width="2.4" stroke-linecap="round"><path d="M-17,86 Q-12,91 -7,86" /><path d="M7,86 Q12,91 17,86" /></g>
+              <circle cx="-20" cy="97" r="5.5" fill="#ff8fab" opacity=".5" />
+              <circle cx="20" cy="97" r="5.5" fill="#ff8fab" opacity=".5" />
+              <path d="M-6,100 Q0,106 6,100" fill="none" stroke="#a0473f" stroke-width="2.2" stroke-linecap="round" />
+            </g>
+          </g></g>
+
+          <!-- Nikku (right) -->
+          <g transform="translate(192,0)"><g class="kid kid-him">
+            <rect x="-17" y="198" width="15" height="22" rx="6" fill="#2f3440" />
+            <rect x="2" y="198" width="15" height="22" rx="6" fill="#2f3440" />
+            <ellipse cx="-10" cy="221" rx="10" ry="5" fill="#fff" />
+            <ellipse cx="10" cy="221" rx="10" ry="5" fill="#fff" />
+            <rect x="-33" y="124" width="66" height="80" rx="22" fill="#8e978c" />
+            <path d="M-9,124 L0,136 L9,124" fill="none" stroke="#7a8378" stroke-width="2.4" />
+            <g class="arm-idle">
+              <rect x="-44" y="130" width="14" height="48" rx="7" fill="#dca582" />
+              <rect x="-45" y="128" width="16" height="16" rx="8" fill="#8e978c" />
+              <rect x="30" y="130" width="14" height="48" rx="7" fill="#dca582" />
+              <rect x="29" y="128" width="16" height="16" rx="8" fill="#8e978c" />
+              <rect x="29.5" y="164" width="15" height="4" rx="2" fill="#151515" />
+            </g>
+            <g class="head">
+              <circle cx="-37" cy="84" r="6" fill="#dca582" />
+              <circle cx="37" cy="84" r="6" fill="#dca582" />
+              <circle cx="0" cy="80" r="37" fill="#dca582" />
+              <path d="M-38,78 C-42,36 -6,30 12,36 C34,36 44,54 37,80 C33,64 24,58 12,58 C-2,62 -24,62 -38,78Z" fill="#1d1410" />
+              <path d="M-6,38 C0,26 16,26 22,34 C12,32 4,34 -6,38Z" fill="#1d1410" />
+              <path d="M-20,77 L-8,76 M8,76 L20,77" stroke="#1d1410" stroke-width="3" stroke-linecap="round" />
+              <g class="eyes-open"><circle cx="-13" cy="86" r="3.6" fill="#1d1410" /><circle cx="13" cy="86" r="3.6" fill="#1d1410" /></g>
+              <g class="eyes-closed" fill="none" stroke="#1d1410" stroke-width="2.4" stroke-linecap="round"><path d="M-18,86 Q-13,91 -8,86" /><path d="M8,86 Q13,91 18,86" /></g>
+              <circle cx="-21" cy="98" r="5" fill="#ff8fab" opacity=".35" />
+              <circle cx="21" cy="98" r="5" fill="#ff8fab" opacity=".35" />
+              <path d="M-11,100 Q-5,95 0,98 Q5,95 11,100 Q5,102 0,101 Q-5,102 -11,100Z" fill="#1d1410" />
+              <path d="M-5,106 Q0,109 5,106" fill="none" stroke="#7a3b30" stroke-width="2" stroke-linecap="round" />
+              <ellipse cx="0" cy="114" rx="5" ry="3.5" fill="#1d1410" opacity=".85" />
+              <path d="M-26,104 Q0,124 26,104" fill="none" stroke="#1d1410" stroke-width="3" opacity=".18" />
+            </g>
+          </g></g>
+
+          <!-- arms that wrap around each other during the hug (drawn on top) -->
+          <g transform="translate(108,0)"><g class="kid kid-her"><g class="arm-hug">
+            <rect x="18" y="140" width="72" height="13" rx="6.5" fill="#f2c4a3" />
+            <rect x="16" y="137" width="20" height="17" rx="8" fill="#ffd93b" />
+          </g></g></g>
+          <g transform="translate(192,0)"><g class="kid kid-him"><g class="arm-hug">
+            <rect x="-92" y="160" width="74" height="14" rx="7" fill="#dca582" />
+            <rect x="-34" y="157" width="20" height="18" rx="8" fill="#8e978c" />
+            <rect x="-80" y="159.5" width="5" height="15" rx="2" fill="#151515" />
+          </g></g></g>
+
+          <g class="hug-hearts">
+            <text x="150" y="40">💗</text><text x="120" y="30">💕</text><text x="178" y="34">💖</text>
+          </g>
+        </svg>
+      </div>
+      <p class="hug-msg" id="hug-msg">Hug delivered from <span class="your-name"></span> 🤍<br /><small>No distance has ever stopped me from hugging you on your day. I'm holding you, always.</small></p>
+    </section>
+
+    <!-- Reasons -->
+    <section id="reasons" class="section">
+      <h2>Reasons I love you 💕</h2>
+      <p class="section-sub">Tap each card</p>
+      <div class="reasons" id="reason-grid"></div>
+    </section>
+
+    <!-- Night sky -->
+    <section id="sky" class="sky">
+      <div class="sky-inner">
+        <h2>Same sky, same moon 🌙</h2>
+        <p class="sky-sub">Whenever you miss me, look up at the moon. I'm looking at the same one, thinking of you.</p>
+        <div class="moon"></div>
+        <div class="star-field" id="star-field"></div>
+        <p class="star-hint">tap the glowing stars ✨ — each one holds a wish or a promise</p>
+        <p class="star-msg" id="star-msg"></p>
+      </div>
+    </section>
+
+    <!-- Forever question -->
+    <section id="forever" class="section">
+      <h2>One last question…</h2>
+      <p class="forever-q">Will you stay mine, through every mile and every year? 💍</p>
+      <div class="forever-btns">
+        <button class="btn" id="yes-btn">Yes, forever 💖</button>
+        <button class="btn btn-ghost" id="no-btn">No</button>
+      </div>
+      <p class="forever-msg" id="forever-msg">I knew it. 🥹 You're stuck with me, Muski — no take-backs.</p>
+    </section>
+
+    <footer class="footer">
+      <p class="big">I love you, <span class="nick-name"></span> 💖</p>
+      <button id="more-confetti" class="btn">One more celebration 🎉</button>
+      <div class="start-wrap">
+        <button id="start-btn" class="btn start-btn">In the end, always remember where we started from 🤍</button>
+      </div>
+      <p class="tiny">made with love by <span class="your-name"></span>, just for you, because you deserve the whole world</p>
+    </footer>
+  </main>
+
+  <!-- "Where we started" reveal -->
+  <div id="first-modal" class="first-modal" aria-hidden="true" hidden>
+    <div class="first-card">
+      <button class="lb-close" id="first-close" aria-label="Close">✕</button>
+      <p class="first-top">where it all began…</p>
+      <div class="first-polaroid">
+        <img src="photos/web/FIRST.jpg" alt="Our first picture together" />
+        <p>Our very first picture together 🤍</p>
+      </div>
+      <p class="first-bottom">…and look how far we've come, <span class="nick-name"></span>.<br />I'd choose you all over again. Every single time. 💗</p>
+    </div>
+  </div>
+
+  <!-- Open-when letter modal -->
+  <div id="ow-modal" class="ow-modal" aria-hidden="true">
+    <div class="ow-card">
+      <button class="lb-close" id="ow-close" aria-label="Close">✕</button>
+      <p class="ow-title" id="ow-title"></p>
+      <p class="ow-text" id="ow-text"></p>
+      <p class="ow-sign">— <span class="your-name"></span> 💗</p>
+    </div>
+  </div>
+
+  <button id="music-btn" class="music-btn hidden" aria-label="Play our song">🎵</button>
+  <audio id="music" loop preload="auto"></audio>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lb-close" aria-label="Close">✕</button>
+    <img id="lb-img" alt="" />
+    <p id="lb-cap"></p>
+  </div>
+
+  <script src="config.js?v=4"></script>
+  <script src="script.js?v=4"></script>
+</body>
+</html>

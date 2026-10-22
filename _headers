@@ -1,0 +1,17 @@
+# Cloudflare Pages response headers
+
+# always fetch the latest page so edits show up immediately
+/
+  Cache-Control: no-cache
+/index.html
+  Cache-Control: no-cache
+
+# photos and video never change once uploaded — let phones cache them
+/photos/*
+  Cache-Control: public, max-age=604800
+/videos/*
+  Cache-Control: public, max-age=604800
+
+# keep this personal page out of search engines
+/*
+  X-Robots-Tag: noindex, nofollow
