@@ -29,12 +29,12 @@ const CONFIG = {
   },
 
   letter: [
-    "Happy birthday, my love. 🎂",
-    "Do you remember last year? I still came to you on your birthday. People asked me why I'd travel that far for one day. The answer was simple: because it was your day, and you are the most special person in my life. Wherever I am, with whoever I am, I'll always find my way to you — I'd cross any distance a hundred times over just to see you smile when you see me.",
-    "But I want you to know something: not a single day goes by without you on my mind. When something funny happens, you're the first person I want to tell. When something goes wrong, your voice is the only thing that fixes it. Every good morning and every good night with you is my favourite part of the day.",
-    "Since 11th June 2023, you've made my life softer, happier, and so much more beautiful. You've loved me on my good days and held on to me on my bad ones — even through a phone screen. I don't take that for granted, not even for a second.",
-    "No distance, no city and no amount of kilometres will ever keep me away from you on the days that matter. Wherever you are, that's where I want to be. You and me? That's forever.",
-    "Until then, I hope you feel how loved you are — today, and every day. You are my favourite person in the whole world, Muski. Happy birthday. ❤️",
+    "Happy birthday, meri jaan. 🎂",
+    "Yaad hai last year? I still came to you on your birthday. Logon ne poocha itni door sirf ek din ke liye kyun? The answer was simple: kyunki woh tumhara din tha, and you are the most special person in my life. Wherever I am, with whoever I am, I'll always find my way to you — tumhari ek smile dekhne ke liye main koi bhi distance sau baar cross kar lunga.",
+    "Ek baat jaan lo: ek bhi din aisa nahi jaata jab tum mere dimaag mein na ho. Kuch funny hota hai toh sabse pehle tumhe batana hota hai. Kuch galat hota hai toh bas tumhari awaaz sun ke sab theek lagne lagta hai. Tumhare saath har good morning aur har good night is my favourite part of the day.",
+    "11th June 2023 se, you've made my life softer, happier, and so much more beautiful. Tumne mujhe mere ache dino mein bhi pyaar kiya aur bure dino mein bhi kas ke pakad ke rakha — even through a phone screen. I don't take that for granted, ek second ke liye bhi nahi.",
+    "Koi distance, koi sheher, koi kilometre mujhe tumse door nahi rakh sakta on the days that matter. Jahan tum, wahan main. You and me? That's forever.",
+    "Bas itna chahta hoon ki tum feel karo how loved you are — aaj bhi, aur har din. You are my favourite person in the whole world, Muski. Happy birthday, meri irritating si jaan. ❤️",
   ],
 
   // Put your pictures inside the "photos" folder and list them here.
