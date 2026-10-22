@@ -81,7 +81,7 @@ const CONFIG = {
     "I promise no distance will ever keep me away from you on your birthday.",
     "I wish every dream you've been quietly holding comes true this year.",
     "I promise to love you on your good days and even more on the hard ones.",
-    "I wish you peace, good health, and lots of chocolate. 🍫",
+    "I wish you peace, good health, and lots of momos 🥟",
     "I promise you'll never have to wonder if I love you.",
     "I wish to celebrate your next birthday right beside you. 🤍",
   ],
