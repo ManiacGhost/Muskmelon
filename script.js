@@ -205,7 +205,7 @@ function tick() {
 
 // ---------- miles apart ----------
 document.getElementById("city-you").innerHTML = `${CONFIG.distance.yourCity}<small>${CONFIG.yourName}</small>`;
-document.getElementById("city-her").innerHTML = `${CONFIG.distance.herCity}<small>${CONFIG.nickname}</small>`;
+document.getElementById("city-her").textContent = CONFIG.distance.herCity;
 const distanceMsg = document.getElementById("distance-msg");
 distanceMsg.innerHTML = CONFIG.distance.message.map((p) => `<p>${p}</p>`).join("");
 

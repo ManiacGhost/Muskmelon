@@ -19,7 +19,7 @@ const CONFIG = {
   // "Wherever I am → Delhi" section
   distance: {
     yourCity: "Wherever I am",
-    herCity: "Delhi",
+    herCity: "Wherever my Muski is",
     message: [
       "Last year bhi tumhare paas aa gaya tha…",
       "…aur hamesha yahi hoga.",
